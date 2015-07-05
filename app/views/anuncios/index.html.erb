@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Classificados</h1>
+  <div class="row">
+    <% @anuncios.each do |anuncio| %>   
+      <div class="col-sm-3 col-md-2 sidebar">
+        <div class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <p class="foto" ><%= anuncio.anexo %></p>
+        <p><%= anuncio.tipo %>) <%= anuncio.titulo %></p>
+        <p><%= anuncio.descricao %></p>
+        <p><%= link_to '>>', anuncio %>
+        <%= link_to '', edit_anuncio_path(anuncio), :class=>"glyphicon glyphicon-pencil" %>
+        <%= link_to '', anuncio, method: :delete, :class=>"glyphicon glyphicon-remove", data: { confirm: 'Are you sure?'}%></p>
+        </div>
+    </div>
+  <% end %>
+  </div>  
+  
+<br>
+
+<%= link_to 'Anunciar', new_anuncio_path %>
+  
+
+        

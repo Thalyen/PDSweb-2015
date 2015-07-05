@@ -1,0 +1,31 @@
+<div >
+<% if flash[:alert] %>
+<p id="notice"><%= flash[:alert] %></p>
+<% end %>
+
+ <div class="outer">
+	<div class="inner">
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Login</h2>
+        <%= form_tag do %>
+
+
+<div>
+<%= text_field_tag :name, params[:name], :class=>"form-control", :type=>"email", :placeholder=>"Email", :required=>"autofocus"  %>
+</div>
+<div>
+<%= password_field_tag :password, params[:password], :class=>"form-control", :type=>"password", :placeholder=>"Senha", :required=>"autofocus"   %>
+</div>
+ <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Lembrar
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+      </form>
+</fieldset>
+<% end %>
+       
+</div>
+    </div> <!-- /container -->
+</div>
