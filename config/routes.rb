@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
   resources :anuncios
+  resources :sessions
+  resources :usuarios
+
   get 'admin' => 'admin#index'
   controller :sessions do
     get 'login' => :new
@@ -13,16 +16,15 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
   get 'usuarios/new'
-  root 'sessions#new', as: 'perfil'
+   root 'admin#index', as: 'perfil'
 
-  resources :sessions
-  resources :usuarios
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'usuario#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

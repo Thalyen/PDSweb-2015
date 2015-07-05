@@ -30,7 +30,10 @@
   <div class="field">
     <%= f.label :unidade %><br>
     <%= f.text_field :unidade %>
-    <%= hidden_field_tag :senha  %>
+  </div>
+   <div class="field">
+    <%= f.label 'Senha:' %><br>
+    <%= f.password_field :senha, placeholder: 'letras e números' %>
   </div>
   <div class="actions">
     <%= f.submit "Criar" %>
