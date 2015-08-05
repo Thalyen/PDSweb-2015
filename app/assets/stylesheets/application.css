@@ -3,7 +3,7 @@
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any styles
@@ -13,75 +13,3 @@
  *= require_tree .
  *= require_self
  */
-*{
-  margin: 0;
-  padding: 0;
-}
-
-body{
-  background-size: 100%;
-  padding-top: 50px;
-  padding-bottom: 20px;
-  }
-
-img {
- width: 200px;
-  height: 48px;
-  border-radius: 25px;
-  padding: 0 5px 0 5px;
-  float: left;
- }
- 
-.navbar-fixed-top{
-	background-color: #28C75B;
-	color: white;
-}
-.nav .navbar-fixed-top{
-	border-bottom: inset 20px #bbffbb;
-}
-
-.nav-sidebar{
-	background-color: #bbffbb;
-	width: 100%;
-  font-family: arial;
-  font-size: 16px;
-  color: white;
-  padding: 10px 0 10px 0;
- 	/*position: absolute;
-    left: 0; ---- don't working
-    top: 0;*/
-    }
-
-.nav-sidebar li a{
-	margin-left: 20px;
-  text-decoration: none;
- }
- 
- span{
- 	padding-right: 10px;
- }
- 
-/*.nav .navbar-form .navbar-right{
-	margin-right: 250px;
-}*/
- 
-.nav-sidebar li a:hover{
-  font-style: italic;
-  border-left: inset 10px #28C75B;
-  border-bottom: inset 3px #28C75B;
-  border-radius: 12px;
-}
-
-.principal{
-  height: 550px;
-  float: none;
-  /*overflow-y: auto;*/
-}
-
-footer{
-  clear: both;
-  margin-top: 30px;
-  text-align: center;
-  font-style: italic;
-  color: gray;
-}

@@ -1,110 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>CondoSmart</title>
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-		<%= csrf_meta_tags %>
-		<meta name="autor" content="No PDS-Ltda." />
-		<meta name="KEYBOARDS" content="gerência, administação,condomínio, edifício" />
-		<meta name="description"  content="Gerência de condomínio"/>
-		<%=favicon_link_tag(source='CondoSmartIcon.png')%>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-	</head>
-	<body>
+<head>
+  <title>PDSweb2015</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-		<!-- Add bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<%= yield %>
 
-		<!-- Add bootstrap  JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-		<!--menu-->
-
-		<nav class="navbar navbar-fixed-top" >
-			<div class="navbar-header">
-				<%= link_to image_tag("CondoSmartFinal.png"), "http://localhost:3000/login"  %>
-			</div>
-				<ul >
-					<!--<li>
-						<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-						<ul id="demo" class="collapse">
-							<li>
-								<a href="#">Dropdown Item</a>
-							</li>
-							<li>
-								<a href="#">Dropdown Item</a>
-							</li>
-						</ul>
-					</li>-->
-
-					<li>
-						<form class="navbar-form navbar-right">
-							<input type="text" class="form-control" placeholder="Search..."/>
-							<span class="glyphicon glyphicon-search" ></span>
-						</form>
-					</li>
-				</ul>
-			<!-- /.navbar-collapse -->
-		</nav>
-
-		<!--menu-->
-
-		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
-				<ul class="nav nav-sidebar">
-					<li >
-						<%= link_to 'Eventos', 'http://localhost:3000/' %>
-					</li>
-					<li>
-						<%= link_to 'Classificados', 'http://localhost:3000/anuncios' %>
-					</li>
-					<li>
-						<%= link_to 'Ocorrência', 'http://localhost:3000/ocorrencia' %>
-					</li>
-					<li>
-						<%= link_to 'Condôminos', 'http://localhost:3000/usuarios' %>
-					</li>
-					<li>
-						<%= link_to 'Documentos', 'http://localhost:3000/' %>
-					</li>
-					<li>
-						<%= link_to 'Enquetes', 'http://localhost:3000/' %>
-					</li>
-					<li>
-						<%= link_to 'Fotos', 'http://localhost:3000/' %>
-					</li>
-					<li>
-						<%= link_to 'Administração', 'http://localhost:3000/' %>
-					</li>
-					<!--<li>
-						<a href="javascript:;" data-toggle="collapse" data-target="#d"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-						<ul id="d" class="collapse">
-							<li>
-								<a href="#">Dropdown Item</a>
-							</li>
-							<li>
-								<a href="#">Dropdown Item</a>
-							</li>-->
-						</ul>
-						</li>
-						</ul>
-						</div>
-						
-<div class="col-sm-3 col-md-2 sidebar">
-			<div class="container"><!--centraliza-->
-				<section class="principal">
-					<%= yield %>	<!--conteudo dinamico-->
-				</section>
-			</div>
-			</div>
-</div>
-			<footer>
-
-				<p>
-					<strong>&copy;2015 - No PDS Ltda.</strong>
-				</p>
-			</footer>
-	</body>
+</body>
 </html>
