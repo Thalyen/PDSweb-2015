@@ -12,6 +12,9 @@ class DeviseInvitableAddToUsers < ActiveRecord::Migration
       t.index      :invitation_token, unique: true # for invitable
       t.index      :invited_by_id
     end
+
+    # And allow null encrypted_password and password_salt:
+    change_column_null :users, :encrypted_password, true
   end
 
   def down
@@ -19,5 +22,6 @@ class DeviseInvitableAddToUsers < ActiveRecord::Migration
       t.remove_references :invited_by, polymorphic: true
       t.remove :invitations_count, :invitation_limit, :invitation_sent_at, :invitation_accepted_at, :invitation_token, :invitation_created_at
     end
+    change_column_null    :users, :encrypted_password, false
   end
 end

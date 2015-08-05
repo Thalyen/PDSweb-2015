@@ -1,0 +1,47 @@
+<%# Menu de usuário logado %>
+<% if user_signed_in? %>
+    <ul class="nav nav-sidebar" >
+        <li ><%= link_to(root_path) do %>
+            <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Início</li>
+        <% end %>
+        <li><%= link_to(root_path) do %>
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Eventos</li>
+        <% end %>
+        <li><%= link_to(anuncios_path) do %>
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Classificados</li>
+        <% end %>
+        <li><%= link_to(users_path) do %>
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Moradores</li>
+        <% end %>
+        <li><%= link_to(root_path) do %>
+            <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Documentos</li>
+        <% end %>
+        <li><%= link_to(root_path) do %>
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Enquetes</li>
+        <% end %>
+        <li><%= link_to(ocorrencia_path) do %>
+            <span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Ocorrências</li>
+        <% end %>
+        <li>
+			<a href="javascript:;" data-toggle="collapse" data-target="#d">
+				<span class="glyphicon glyphicon-file" aria-hidden="true"></span>  Contas 
+				<i class="fa fa-fw fa-caret-down"></i></a>
+						<ul id="d" class="collapse" >
+							<li>
+								<%= link_to 'Novo Lançamento', new_lancamento_contabil_path %> 
+							</li>
+							<li>
+								<%= link_to 'Lançamentos', lancamentos_contabeis_path %>
+							</li>
+							</li>
+    </ul>
+<% end %>
+
+</ul>
+
+<!--<ul class="nav nav-sidebar">
+  <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+  <li><a href="#">Reports</a></li>
+  <li><a href="#">Analytics</a></li>
+  <li><a href="#">Export</a></li>
+</ul>-->

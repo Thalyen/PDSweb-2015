@@ -1,13 +1,22 @@
-<%# add navigation links to this file %>
+<!-- add navigation links to this file -->
+<ul class="nav navbar-nav navbar-right">
+<!-- Opção para usuário ADM 
 <% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+    <% if current_user.try(:admin?) %>
+        <li><%= link_to 'Usuários', users_path %></li>
+    <% end %>
+<% end %>-->
+
+<%# Opções de sessão para usuário logado ou não %>
+<% if user_signed_in? %>
+  <li><%= link_to current_user.name, edit_user_registration_path %></li>
+  <li><%= link_to 'Sair', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+  <li><%= link_to 'Entrar', new_user_session_path %></li>
+  <li><%= link_to 'Cadastre-se', new_user_registration_path %></li>
 <% end %>
-<% if user_signed_in? %>
-  <% if current_user.try(:admin?) %>
-    <li><%= link_to 'Users', users_path %></li>
-  <% end %>
-<% end %>
+</ul>
+<!--Formulário de busca
+<form class="navbar-form navbar-right">
+  <input type="text" class="form-control" placeholder="Search...">
+</form>-->

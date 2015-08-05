@@ -1,0 +1,33 @@
+<h1>Classificados</h1>
+<div class="container content-sm">
+	<!-- Service Blocks -->
+	<div class="row margin-bottom-30">
+		<% @anuncios.each do |anuncio| %>
+		<div class="col-md-3">
+				<div class="service">
+					<i class="fa fa-compress service-icon"></i>
+					<div class="desc">
+						<p class="foto" ><%= anuncio.anexo %></p>
+						<h4> <%= anuncio.titulo %></h4>
+						<p>
+						<%= anuncio.tipo %>
+						</p>
+						<p>
+							<%= anuncio.descricao %>
+						</p>
+						<p>
+							<%= link_to '>>', anuncio %>
+							<%= link_to '', edit_anuncio_path(anuncio), :class=>"glyphicon glyphicon-pencil" %>
+							<%= link_to '', anuncio, method: :delete, :class=>"glyphicon glyphicon-remove", data: { confirm: 'Você tem certeza?'}%>
+						</p>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+
+	
+</div>
+	<br>
+
+	<%= link_to 'Anunciar', new_anuncio_path %>

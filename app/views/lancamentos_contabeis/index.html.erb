@@ -1,0 +1,16 @@
+<h1>Lançamentos Contábeis</h1>
+<hr /><br>
+<% d=0; c=0%>
+
+<table>
+	<tr>
+		<th>Período</th>
+		<th>Lançamentos</th>
+	</tr>
+	<% @lancamentos_contabeis.each do |lc| %>
+		<tr>
+			<td><%= link_to "#{lc[0]}", "#{lancamentos_contabeis_path}/periodo/#{lc[0]}" %></td>
+			<td><%= lc[1] %></td>
+		</tr>
+	<% end %>
+</table>

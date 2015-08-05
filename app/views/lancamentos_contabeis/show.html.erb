@@ -1,0 +1,25 @@
+<h1>Lançamento Contábil</h1>
+<hr />
+<br>
+
+<p>
+	<strong>Título:</strong>
+	<%= @lancamento_contabil.titulo %>
+</p>
+
+<p>
+	<strong>Valor:</strong>
+	<%= sprintf("R$%0.02f", @lancamento_contabil.valor) %>
+</p>
+
+<p>
+	<strong>Tipo:</strong>
+	<%= @lancamento_contabil.tipo==0 ? 'Débito' : 'Crédito' %>
+</p>
+
+<p>
+	<strong>Descrição:</strong>
+	<%= @lancamento_contabil.descricao %>
+</p>
+
+<%= link_to 'Retornar', lancamentos_contabeis_path %>

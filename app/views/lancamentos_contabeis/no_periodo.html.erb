@@ -1,0 +1,32 @@
+<h1>Lançamentos Contábeis <%= "no período: #{@periodo}"%></h1>
+<hr /><br>
+<% d=0; c=0%>
+
+<table>
+	<tr>
+		<th>Título</th>
+		<th>Débito</th>
+		<th>Crédito</th>
+		<th colspan="2"></th>
+	</tr>
+	<% @lancamentos_contabeis.each do |lc| %>
+		<tr>
+			<td><%= lc.titulo %></td>
+			<td><%= lc.valor if lc.tipo == 0 %></td>
+			<td><%= lc.valor if lc.tipo == 1 %></td>
+			<td><%= link_to 'Mostrar', lancamento_contabil_path(lc) %></td>
+			<td><%= link_to 'Editar', edit_lancamento_contabil_path(lc) %></td>
+			<td><%= link_to 'Excluir', lancamento_contabil_path(lc), method: :delete, data:{confirm: 'Tem certeza?'} %></td>
+		</tr>
+
+		<% lc.tipo==0 ? d += lc.valor : c += lc.valor %>
+	<% end %>
+	<tr>
+		<td></td>
+		<td><%= d %></td>
+		<td><%= c %></td>
+	</tr>
+</table>
+<p>Total: <%=c-d %></p>
+
+<%= link_to 'Retornar', lancamentos_contabeis_path %>

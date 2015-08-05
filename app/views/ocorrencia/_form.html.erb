@@ -1,0 +1,29 @@
+<%= form_for(@ocorrencium, :html => { :multipart => true }) do|f|   %>
+  <% if @ocorrencium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ocorrencium.errors.count, "error") %> prohibited this ocorrencium from being saved:</h2>
+
+      <ul>
+      <% @ocorrencium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_area :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label 'data:', :data %><br>
+    <%= f.date_select :data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

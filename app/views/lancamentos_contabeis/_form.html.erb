@@ -1,0 +1,37 @@
+<%= form_for :lancamento_contabil do |lc| %>
+	
+	<% if @lancamento_contabil.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<% pluralize(@lancamento_contabil.errors.count, "error") %> 
+				proibiu este lançamento de ser salvo:
+			</h2>
+			<ul>
+				<% @lancamento_contabil.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= lc.label :titulo %><br>
+		<%= lc.text_field :titulo %>
+	</p>
+	<p>
+		<%= lc.label :valor %><br>
+		<%= lc.text_field :valor %>
+
+		<%= lc.label :tipo, "Débito", :value => 0 %>
+		<%= lc.radio_button :tipo, 0 %>
+		<%= lc.label :tipo, "Crédito", :value => 1 %>
+		<%= lc.radio_button :tipo, 1, :checked => true %>
+	</p>
+	<p>
+		<%= lc.label :descricao %><br>
+		<%= lc.text_area :descricao %><br>
+	</p>
+
+	<p><%= lc.submit :value => 'Salvar' %></p>
+<% end %>
+

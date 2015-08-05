@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '85a84e75f86a5ba9919fdb05e5298dcd357c7eda5486faac6649673d949c7e08c1d216eba4953750d129fd7cd630654ab725c1cd64dad1dd753a78f710004fcc'
+  # config.secret_key = '7145a6150d925ca567f43aae92c6507137148dcd9a06735347101e681714a5e48fe79bfdc7c365ed8d06dd837cf8192f48276a235cfcfc58e8d390dc6d4a98c7'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -99,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '4784ab8a8b05e3574c2a845f3c5e4fdf91fa695a2214248e58e82886f5db768e58f04c812ed521249d2629979a9a5e97cefb5c1525618aba4e840018923c9ce9'
+  # config.pepper = '618230356fea8bce83e3c204b879575957683c9fe14d95fadc2fc00a7a05d810826beed89331093c9b19ed95d9baa9351804ac84e2e1d421edb9b1dae0e5aa96'
 
   # ==> Configuration for :invitable
   # The period the generated invitation token is valid, after
@@ -120,11 +120,11 @@ Devise.setup do |config|
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
   # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
-  # config.invite_key = {:email => /\A[^@]+@[^@]+\z/, :username => nil}
+   config.invite_key = {:email => /\A[^@]+@[^@]+\z/, :username => nil}
 
   # Flag that force a record to be valid before being actually invited
   # Default: false
-  # config.validate_on_invite = true
+   config.validate_on_invite = true
 
   # Resend invitation if user with invited status is invited again
   # Default: true
@@ -133,16 +133,12 @@ Devise.setup do |config|
   # The class name of the inviting model. If this is nil,
   # the #invited_by association is declared to be polymorphic.
   # Default: nil
-  # config.invited_by_class_name = 'User'
-
-  # The foreign key to the inviting model (if invited_by_class_name is set)
-  # Default: :invited_by_id
-  # config.invited_by_foreign_key = :invited_by_id
+   config.invited_by_class_name = 'User'
 
   # The column name used for counter_cache column. If this is nil,
   # the #invited_by association is declared without counter_cache.
   # Default: nil
-  # config.invited_by_counter_cache = :invitations_count
+   config.invited_by_counter_cache = :invitations_count
 
   # Auto-login after the user accepts the invite. If this is false,
   # the user will need to manually log in after accepting the invite.
@@ -190,7 +186,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 8..72
+  config.password_length = 6..72
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -259,7 +255,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+   config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
