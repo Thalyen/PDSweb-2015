@@ -26,4 +26,8 @@ Rails.application.routes.draw do
 
   # rotas para os períodos
   get 'lancamentos_contabeis/periodo/:periodo' => 'lancamentos_contabeis#no_periodo'
+
+  # area administrativa
+  get '/admin/', to: 'admins#index'
+  get '/admin/sign_in', to: 'admins#sign_in'
 end
