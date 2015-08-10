@@ -1,48 +1,19 @@
-Pdsweb 2015
-================
+# PDS 2015.1 - CondoSmart
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+## Apresentação
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+Somos alunos do IF do Rio Grande do Norte, do curso de **TADS** (Tecnologia e Análise em Desenvolvimento de Sistemas). Neste semestre (2015.1) estamos cursando a disciplina **PDS Web** (Processo de Desenvolvimento de Software), tendo por objetivo principal desenvolver o Sistema **CondoSmart** (Condomínio Inteligente). 
 
-Problems? Issues?
------------
+## Componentes
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+* Armando Filho
+* Érik Alexandre
+* Gercino Júnior
+* Ivan Diniz
+* Tatiana Dantas
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
+## Professores Monitores
 
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.2.2
-- Rails 4.2.3
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+* Fellipe Aleixo (Desenvolvimento de Sistema WEB)
+* Marilia Freire (Análise e Projeto Orientados a Objeto)
+* José Antônio (Banco de Dados)
