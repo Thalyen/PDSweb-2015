@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+	<div class="alert alert-warning" style="margin-top: 20px">
+		<p><%= flash[:notice]%></p>
+	</div>
+<% end %>
+
+<%= form_tag({controller: "admins", action: "new"}, id: "form_sign_in" ) do %>
+<%= label_tag(:user, 'Usuário') %>
+<%= text_field_tag(:user, nil, class: "form-control") %>
+<%= label_tag(:password, 'Senha') %>
+<%= password_field_tag(:password, nil, class: "form-control") %>
+<br />
+<%= submit_tag("Logar", class: "btn btn-primary") %>
+<% end %>
