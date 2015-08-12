@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803150226) do
+ActiveRecord::Schema.define(version: 20150811192418) do
 
   create_table "anuncios", force: :cascade do |t|
     t.integer  "tipo"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20150803150226) do
     t.string   "anexo_content_type"
     t.integer  "anexo_file_size"
     t.datetime "anexo_updated_at"
+  end
+
+  create_table "condos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.boolean  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lancamentos_contabeis", force: :cascade do |t|
