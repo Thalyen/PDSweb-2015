@@ -1,6 +1,12 @@
 <% if flash[:notice] %>
+	<div class="alert alert-info" style="margin-top: 20px">
+		<p><strong>Informando: </strong><%= flash[:notice]%></p>
+	</div>
+<% end %>
+
+<% if flash[:error] %>
 	<div class="alert alert-warning" style="margin-top: 20px">
-		<p><%= flash[:notice]%></p>
+		<p><strong>Atenção: </strong><%= flash[:error]%></p>
 	</div>
 <% end %>
 

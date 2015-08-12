@@ -1,5 +1,7 @@
 class CondosController < ApplicationController
   before_action :set_condo, only: [:show, :edit, :update, :destroy]
+  before_action :sessao
+  layout "area_administrativa"
 
   # GET /condos
   # GET /condos.json
@@ -65,6 +67,13 @@ class CondosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_condo
       @condo = Condo.find(params[:id])
+    end
+
+    def sessao
+        unless session[:logged]
+          flash[:notice] = "Área restrita."
+          redirect_to admin_sign_in_path
+        end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

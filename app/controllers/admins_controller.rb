@@ -1,13 +1,8 @@
 class AdminsController < ApplicationController
-    # skip_before_filter :verify_authenticity_token
+    before_action :sessao, except: [:create, :new]
+    layout "area_administrativa"
 
     def index
-        if session[:logged]
-            render layout: "area_administrativa"
-        else
-            flash[:notice] = "Área restrita."
-            redirect_to action: "new"
-        end
     end
 
     def show
@@ -25,13 +20,23 @@ class AdminsController < ApplicationController
             session[:logged] = true
             redirect_to action: "index"
         else
-            flash[:notice] = "Usuário ou Senha inválidos"
+            flash[:error] = "Usuário ou Senha inválidos!"
             redirect_to action: "new"
         end
     end
 
     def destroy
         session[:logged] = false
+        flash[:notice] = "Você fez logout com sucesso."
         redirect_to action: "new"
+    end
+
+    private
+
+    def sessao
+        unless session[:logged]
+            flash[:error] = "Área restrita."
+            redirect_to admin_sign_in_path
+        end
     end
 end
