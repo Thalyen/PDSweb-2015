@@ -32,4 +32,6 @@ Rails.application.routes.draw do
   get  '/admin/sign_in',  to: 'admins#new'
   get  '/admin/sign_out', to: 'admins#destroy'
   post '/admin/sign_in',  to: 'admins#create'
+
+  resources :condos, :path => "/admin/condos"
 end
